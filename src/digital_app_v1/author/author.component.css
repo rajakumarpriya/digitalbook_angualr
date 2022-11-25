@@ -1,0 +1,27 @@
+div{
+    background: rgb(255, 248, 240);
+}
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+h3{
+    color: black;
+}
+td {
+    font-size: 15px;
+    border: 1px solid;
+}
+th {
+    font-size: 15px;
+    border: 1px solid;
+}
+
+table.table.table-striped.table-bordered {
+    border: 1px solid;
+}
+button, a {
+    background: red;
+    color: wheat;
+}

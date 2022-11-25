@@ -1,0 +1,52 @@
+<h3>Reader informations on DigitalbookApp</h3>
+<!-- <h2>All movies</h2>
+
+<div class = "row">
+    <h2> Employee List</h2>
+</div> -->
+
+<form>
+    readername: <input type="text" #readername /><br/>
+    readermail: <input type="text" #readermail /><br/>
+    bookid: <input type="number" #bookid /><br/>
+    paymentid: <input type="number" #paymentid /><br/>
+    purchasedate: <input type="text" #purchasedate /><br/>
+  
+    <input type="button" value="Add" (click)="create(readername.value, readermail.value, 
+    +bookid.value,+paymentid.value,purchasedate.value);"/>
+    <input type="button" value="Search" (click)="getPurchaseById(+bookid.value);"/>
+</form>
+<div class="container">
+    <!-- <input type="form-control" type="text" placeholder="Search" /> -->
+<!-- <button (click)="create()">AddPurcahse</button> -->
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> id</th>
+            <th> reader name </th>
+            <th> Email Id</th>
+            <th> payment id</th>
+            <th> bookid</th>
+            <th> purchasedate</th>
+
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let buybookval of buybook" >
+            <td> {{ buybookval.id }} </td>
+            <td> {{ buybookval.readername }} </td>
+            <td> {{ buybookval.readermail }} </td>
+            <td> {{ buybookval.paymentid }} </td>
+            <td> {{ buybookval.bookid }} </td>
+            <td> {{ buybookval.purchaseDate }} </td>
+            <td>
+                <button (click) = "deletepurchasebook(buybookval.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <!-- <button (click) = "deletepurchasebook(buybookval.id)" class = "btn btn-danger" style="margin-left: 10px"> Delet1e</button> -->
+               <!--  <button (click) = "employeeDetails(buybook.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button> -->
+               <a  class="nav-link"  routerLink="../updatereader">update</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

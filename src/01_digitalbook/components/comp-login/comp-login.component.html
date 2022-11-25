@@ -1,0 +1,12 @@
+<p>comp-login works!</p>
+<form>
+    username: <input type="text" #username /><br/>
+    password: <input type="text" #password /><br/>
+    email: <input type="text" #email /><br/>
+    roles: <input type="dropdown" #roles /><br/>
+    
+  
+    <input type="button" value="Add" (click)="createUserReg(username.value, password.value, 
+    email.value,roles.value);"/>
+    
+</form>

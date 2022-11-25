@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Spring Boot + Angular 8 CRUD Example</h1>
+    </div>
+    <div class="row">
+        <form [formGroup]="myForm" (ngSubmit)="submitForm(myForm)">
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">First Name</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="First name"
+                        formControlName="firstName">
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Last Name</label>
+                    <input type="text" class="form-control" id="inlineFormInput" placeholder="Last name"
+                        formControlName="lastName">
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                    <input type="text" class="form-control" id="inlineFormInput" placeholder="Email"
+                        formControlName="email">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2" [disabled]="!myForm.valid">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of usersList; let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{student.firstName}}</td>
+                    <td>{{student.lastName}}</td>
+                    <td>{{student.email}}</td>
+                    <td>
+                        <span style="margin-right: 10px"><button (click)="edit(student)"
+                                class="btn btn-primary mb-2">Edit</button> </span>
+                        <span><button (click)="delete(student)" class="btn btn-primary mb-2">Delete</button></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

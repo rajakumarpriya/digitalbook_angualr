@@ -1,0 +1,49 @@
+<h3>Book informations on DigitalbookApp</h3>
+<form>
+
+
+  
+    title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" #title /><br/>
+    image: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" #image /><br/>
+    category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" #category /><br/>
+    price: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" #price /><br/>
+    auhtor: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" #auhtor /><br/>
+    auhtorid: <input type="number" #auhtorid /><br/>
+    publisher: <input type="text" #publisher /><br/>
+    published_date: <input type="number" #published_date /><br/>
+    chapter: <input type="number" #chapter /><br/>
+    active_status: <input type="text" #active_status /><br/>
+
+    searchbyid: <input type="text" #id /><br/>
+    <input type="button" value="SEARCH_BOOK" (click)="getbookById(+id.value);"/>
+  
+    <input type="button" value="CREATE_BOOK" (click)="createbook(image.value,title.value,category.value,+price.value,auhtor.value,
+    +auhtorid.value, publisher.value,published_date.value,chapter.value,
+    active_status.value);"/>
+    <input type="button" value="Update_BOOK" (click)="updateData(image.value,title.value,category.value,+price.value,auhtor.value,
+    +auhtorid.value, publisher.value,published_date.value,chapter.value,
+    active_status.value);"/>
+    
+    
+</form>
+
+<div class="form-group">
+    <label>Customer Age : </label>
+    <input type="text" class="form-control" formControlName="title" placeholder="Enter customer title">
+  </div>
+
+  <div class="form-group">
+    <label>Customer Address : </label>
+    <input type="text" class="form-control" formControlName="address" placeholder="Enter customer address">
+  </div>
+
+
+  <div class="form-group">
+    <label>Customer email : </label>
+    <input type="text" class="form-control" formControlName="email" placeholder="Enter customer email">
+    <span class="warning" *ngIf="updateCustomerForm.controls['email'].errors?.email">
+      *Please enter a valid email </span>
+  </div>
+  <button type="reset" class="btn btn-warning mr-1">Reset</button>
+  <!-- <button type="submit" [disabled]="!updateCustomerForm.valid" class="btn btn-primary">Update Customer</button> -->
+
